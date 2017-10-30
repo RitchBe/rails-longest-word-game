@@ -1,5 +1,10 @@
 require "open-uri"
 class WordsControllerController < ApplicationController
+
+  def home
+
+
+  end
   def generate_grid(grid_size)
     # TODO: generate random grid of letters
     array = ('A'..'Z').to_a
@@ -7,7 +12,7 @@ class WordsControllerController < ApplicationController
   end
   def game
     $start_time = Time.now
-    @grid = generate_grid(9)
+    @grid = generate_grid(params[:difficulty].to_i)
     $grid = @grid
 
 
@@ -28,6 +33,16 @@ class WordsControllerController < ApplicationController
       pre_message = "Well done!"
       pre_score = (user["length"] - (pre_time / 10)) * 1000
     end
+    @difficulty = params[:difficulty].to_i
+
+    if @difficulty == 10
+      pre_score += 100
+    elsif @difficulty == 8
+      pre_score += 400
+    else @difficulty == 6
+      pre_score += 800
+    end
+
       { time: pre_time, score: pre_score, message: pre_message }
 end
 
