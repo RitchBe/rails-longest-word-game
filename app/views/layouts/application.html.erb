@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RailsLongestWordGame</title>
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,8 @@
   </head>
 
   <body>
+    <div class="wrapper">
     <%= yield %>
+  </div>
   </body>
 </html>

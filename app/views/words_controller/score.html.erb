@@ -1,0 +1,14 @@
+<h1>Your Score</h1>
+
+<% if @attempt != '' %>
+<p>Your word: <%= @attempt %></p>
+<p>Time taken: <%= @finalscore[:time]  %></p>
+<p>Your score: <%= @finalscore[:score].to_i %></p>
+<p>Message: <%= @finalscore[:message] %></p>
+<% else %>
+<p>No answer</p>
+<% end %>
+
+<p>You have played <%= session[:number_of_game] %> games !</p>
+<p>You're average score is: <%= @average %></p>
+<%= link_to "Play again !", game_path  %>

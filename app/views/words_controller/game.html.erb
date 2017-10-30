@@ -1,0 +1,9 @@
+<h1>Longest Word</h1>
+<p><%= @grid %></p>
+<% @start_time = 55 %>
+<form action="/score">
+  <!-- <label for="question">Speak to your coach</label> -->
+  <input type="text" id="question" name="answer" placeholder="Attempts" autofocus="true">
+  <input type="submit" value="Go on!">
+  <% @end_time = Time.now %>
+</form>
